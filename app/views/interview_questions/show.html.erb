@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @interview_question.question %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @interview_question.created_by %>
+</p>
+
+<%= link_to 'Edit', edit_interview_question_path(@interview_question) %> |
+<%= link_to 'Back', interview_questions_path %>

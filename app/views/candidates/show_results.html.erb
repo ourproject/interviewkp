@@ -1,0 +1,36 @@
+<h1>Test Results</h1>
+
+ <% @results.each do |result| %>
+
+ <h2><%= result.set_by %></h2>
+
+ <% if result.pass_or_fail=="pass" %>
+ <% remark="Congratulations!! You have passed the test.." %>
+ <% else %>
+ <% remark="Sorry.. you failed" %>
+ <% end %>
+<table border=1>
+	
+		<tr>
+			<th>Total No. of questions</th>
+			<th>Marks Obtained</th>
+			<th>Remark</th>
+			<th>Next stage</th>
+		</tr>
+	
+	<tr>
+		<td><%= result.number_of_questions.to_s %></td>
+		<td><%= result.marks.to_s %></td>
+		<td><%= remark %></td>
+		<td><% if result.pass_or_fail=="pass" %>
+			<% sql="select id from interviews where set_by='"+result.set_by+"'" %>
+			<% int_id=Interview.find_by_sql(sql) %>
+			<%= link_to 'Start Interview', interview_session_interview_url(:interview_id => int_id.first.id, :question_id => -1) %>
+			<% else %>
+			----
+			<% end %>
+		</td>
+	</tr>
+</table>
+
+<% end %>
