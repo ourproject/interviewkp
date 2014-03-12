@@ -1,0 +1,36 @@
+<h1>Questions list</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>URL</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clips.each do |clip| %>
+    <% sql="select distinct question from interview_questions where id='"+clip.question_id.to_s+"'" %>
+      <% question=InterviewQuestion.find_by_sql(sql) %>
+      <% if question.length !=0 %>
+      <tr>
+        <td>
+      
+      <%= question.first.question %>
+      
+    </td>
+    <td>      
+      <%= link_to 'View interview clip', clip.url %>
+    </td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+  
+</table>
+<div>
+  <%= button_to 'Logout', logout_path, :method =>"delete" %>
+</div>
+
+<br>
