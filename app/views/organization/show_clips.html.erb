@@ -10,10 +10,12 @@
   </thead>
 
   <tbody>
-    <% @clips.each do |clip| %>
-    <% sql="select distinct question from interview_questions where id='"+clip.question_id.to_s+"'" %>
+    <% @clips.select("DISTINCT(question_id),user_id,interview_id,url").each do |clip| %>
+    <% if clip.interview_id == params[:interview_id] %>
+    <% sql="select question from interview_questions where id='"+clip.question_id.to_s+"'" %>
+    <% sql1="select id from interviews where id='"+clip.interview_id+"'"%>
       <% question=InterviewQuestion.find_by_sql(sql) %>
-      <% if question.length !=0 %>
+      <% if question.length !=0  %>
       <tr>
         <td>
       
@@ -24,6 +26,7 @@
       <%= link_to 'View interview clip', clip.url %>
     </td>
       </tr>
+    <% end %>
     <% end %>
     <% end %>
   </tbody>
