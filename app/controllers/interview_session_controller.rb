@@ -12,8 +12,7 @@ class InterviewSessionController < ApplicationController
     count=session[:question_count].to_i
     
     if(count==0)
-    	#add a view page saying interview complete
-    	redirect_to candidates_index_url
+    	redirect_to interview_session_thankyou_path
     else
 
     

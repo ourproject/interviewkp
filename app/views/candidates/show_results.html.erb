@@ -25,7 +25,13 @@
 		<td><% if result.pass_or_fail=="pass" %>
 			<% sql="select id from interviews where set_by='"+result.set_by+"'" %>
 			<% int_id=Interview.find_by_sql(sql) %>
-			<%= link_to 'Start Interview', interview_session_interview_url(:interview_id => int_id.first.id, :question_id => -1) , :class => 'button', :id => 'button' %>
+
+			<% sql="select count(*) as c from clips where user_id="+session[:user_id].to_s+" and interview_id="+int_id.first.id.to_s %>
+			<% count=Clip.find_by_sql(sql).first.c.to_i %>
+				<% if count==0 %>	
+					<%= button_to 'Start Interview', interview_session_interview_url(:interview_id => int_id.first.id, :question_id => -1) , :class => 'button', :id => 'button'%>
+				<% end %>
+
 			<% else %>
 			----
 			<% end %>

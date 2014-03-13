@@ -35,9 +35,12 @@
       
       <%= question.first.question %>
       
-       </td>
-     <td> 
-      <%= link_to 'View interview clip', clip.url, :method => 'mylink', :id => 'mylink' %>
+
+    </td>
+    <td> 
+    <a href=clip.url>View interview clip </a>
+      <%= link_to 'View interview clip', clip.url %>
+
     </td>
       </tr>
     <% end %>
