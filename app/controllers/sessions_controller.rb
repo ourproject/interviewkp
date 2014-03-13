@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-  	user=User.find_by_name(params[:name])
+  	user=User.find_by_email_id(params[:email_id].to_s)
 	if user && user.password==params[:password]
 		if user.role=="Organisation"
 			session[:user_id]=user.id

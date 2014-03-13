@@ -20,6 +20,9 @@ Erecruitment::Application.routes.draw do
   get "candidate/index"
   get "organization/index"
   get "admin/aboutus"
+  get "testpaper/thankyou"
+  get "interview_session/thankyou"
+
   resources :tests
 
   get 'admin' => 'admin#index'

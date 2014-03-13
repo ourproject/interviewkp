@@ -14,7 +14,7 @@ class TestpaperController < ApplicationController
     session[:question_count]=count
   	
     if(count==0)     
-        sql="select count(*) as c from answers a join my_questions q where a.question_id=q.id AND a.selected_answer=q.anwser AND a.user_id="+session[:user_id].to_s
+        sql="select count(*) as c from answers a join my_questions q where a.test_id="+session[:test_id]+" AND a.question_id=q.id AND a.selected_answer=q.anwser AND a.user_id="+session[:user_id].to_s
         marks_obtained=Answer.find_by_sql(sql).first.c.to_i
         sql="select cutoff from tests where tests.id="+session[:test_id]
         cutoff_marks=Test.find_by_sql(sql).first.cutoff.to_i
@@ -29,8 +29,7 @@ class TestpaperController < ApplicationController
         end
         test_result = TestResult.new(:test_id=> session[:test_id], :user_id => session[:user_id], :marks => marks_obtained, :pass_or_fail => result, :notification_status => "pending")
         if test_result.save
-          redirect_to candidates_index_url 
-          #finish test add test finish page later  
+          redirect_to testpaper_thankyou_path
         else
           format.html { render action: 'new' }
           format.json { render json: @answer.errors, status: :unprocessable_entity }

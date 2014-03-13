@@ -31,6 +31,7 @@ class ClipsController < ApplicationController
   def create
     addr='file://'+Rails.root.join('public/videos/').to_s
     addr=addr+session[:user_id].to_s+'_'+session[:interview_id].to_s+'_'+session[:question_id].to_s+'.webm'
+    
     @clip = Clip.new(:user_id => session[:user_id], :interview_id => session[:interview_id],  :question_id => session[:question_id], :url => addr)
 
     
