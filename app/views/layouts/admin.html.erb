@@ -2,36 +2,23 @@
 
 <html>
 <head>
-  <title>LOGIN</title>
+  
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= controller.controller_name %>">
-	<%= form_tag do %>
-<fieldset>
-	<h1> ERECRUITMENT </h1>
-<legend>Please Log In</legend>
-<div>
-<%= label_tag :name, 'Name:' %>
-<%= text_field_tag :name, params[:name] %>
-
-<%= label_tag :password, 'Password:' %>
-<%= password_field_tag :password, params[:password] %>
-</div>
-<div>
-<%= submit_tag "Login" , :method => :get ,:class=> 'button1' , :id=> 'button1' %>
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-<%= link_to 'New User? Register here!!', new_user_path %>
-</div>
-</fieldset>
-<% end %>
 	
-	<div id="main"> 
-	<%= yield %> 
+	<div id="banner"> 
+	<%= image_tag("job.jpg", :alt => "rss feed") %>
+	<%= @page_title || "ERECRUITMENT" %> 
 	</div> 
-    
+		
+	    	<div id="main"> 
+	    	<%= yield %> 
+	    	</div> 
+	    	
+	    </div> 
 	
 </body>
 </html>
