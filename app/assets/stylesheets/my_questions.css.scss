@@ -21,14 +21,13 @@ border-bottom: 2px dotted black;
 min-height: 100px; 
 
 h2
-{
-font-size: 140%;
-font-family: sans-serief;
-margin-left: 200px;
-margin-right: 100px;
-margin-top: 0;
-margin-bottom: 2px;
-color: #227;
+{  
+  
+  padding-bottom: 0.5em;
+  font: 150% "Arial Black", serif, bold; 
+  color: black;
+
+  
 }
 
 p, div.option { 
@@ -77,6 +76,15 @@ color: navy;
 {
  color: blue;
 }
+}
+h2
+{  
+  
+  padding-bottom: 0.5em;
+  font: 150% "Arial Black", serif, bold; 
+  color: black;
+
+  
 }
 
 }
