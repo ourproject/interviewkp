@@ -13,6 +13,8 @@ Erecruitment::Application.routes.draw do
   get "candidates/index"
   get "candidates/show_tests"
   get "candidates/show_results"
+  get "organization/show_candidates"  
+  get "organization/show_clips"  
   get "candidate/index"
   get "organization/index"
   resources :tests

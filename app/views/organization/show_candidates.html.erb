@@ -1,0 +1,42 @@
+<h1>Candidates list</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interview Id</th>
+      <th>Candidate name</th>      
+      <th></th>
+
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @clips.select("DISTINCT(interview_id),user_id,question_id,url").each do |clip| %>
+  <% sql1="select created_by from interview_questions where id='"+clip.question_id+"'" %>
+  <% tname=InterviewQuestion.find_by_sql(sql1) %>
+  <% if tname.length !=0 %>
+  <% sql2="select id from users where name='"+tname.first.created_by+"'" %>
+  <% tid=User.find_by_sql(sql2) %>
+    <% if tid.first.id==session[:user_id] %>
+      <tr>
+        <td><%= clip.interview_id.to_s %></td>
+        <td>
+      <% sql="select name from users where id='"+clip.user_id+"' and name is not null" %>
+      <% name=User.find_by_sql(sql) %>
+      <%= name.first.name %>
+    </td>
+    <td>      
+      <%= link_to 'View questions and clips', organization_show_clips_path(:interview_id => clip.interview_id) %>
+    </td>
+      </tr>
+    <% end %>
+    <% end %>
+    <% end %>
+    
+  </tbody>
+</table>
+<div>
+  <%= button_to 'Logout', logout_path, :method =>"delete" %>
+</div>
+
+<br>
