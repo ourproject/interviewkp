@@ -18,9 +18,17 @@
 		<div id="columns"> 
 			<div id="side"> 
 			<ul> <h2><b>
-				<li><a href="http://www....">Home</a></li> </br>
-				<li><a href="http://www..../faq">About Us</a></li></br>
-				<li><a href="http://www..../news">Logout</a></li> </br>
+				<li> 
+				<% sql= "select role from users where id='"+session[:user_id].to_s+"'" %>
+				<% role= User.find_by_sql(sql).first.role.to_s %>
+				<% if role=="Candidate" %>
+				<a href= "http://localhost:3000/Candidates/index" >Home</a>
+			<% else %> 
+                 <a href= "http://localhost:3000/organization/index" >Home</a>
+                 <% end %>
+				</li> </br>
+				<li><a href="http://localhost:3000/admin/aboutus">About Us</a></li></br>
+				<li> <%= link_to 'Logout', logout_path, :method =>"delete" %></li> </br>
 				
 			</b></h2>
 			</ul> 
