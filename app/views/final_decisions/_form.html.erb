@@ -1,0 +1,64 @@
+<%= form_for(@final_decision) do |f| %>
+  <% if @final_decision.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@final_decision.errors.count, "error") %> prohibited this final_decision from being saved:</h2>
+
+      <ul>
+      <% @final_decision.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>Questions list</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>URL</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% session[:interview_id]=params[:interview_id] %>
+    <% @clips.select("DISTINCT(question_id),user_id,interview_id,url").each do |clip| %>
+    <% if clip.interview_id == params[:interview_id] %>
+    <% sql="select question from interview_questions where id='"+clip.question_id.to_s+"'" %>
+    <% sql1="select id from interviews where id='"+clip.interview_id+"'"%>
+      <% question=InterviewQuestion.find_by_sql(sql) %>
+      <% if question.length !=0  %>
+      <tr>
+        <td>
+      
+      <%= question.first.question %>
+      
+    </td>
+    <td> 
+    
+      <%= link_to 'View interview clip', clip.url %>
+    </td>
+      </tr>
+    <% end %>
+    <% end %>
+    <% end %>
+  </tbody>
+  
+</table>
+
+<div class="field">
+<%= radio_button_tag(:decision, "accept") %>
+    <%= label_tag(:decision_label, "accept") %>
+</div>
+<div class="field">
+<%= radio_button_tag(:decision, "reject") %>
+    <%= label_tag(:decision_label, "reject") %>
+</div>
+  
+
+    <div class="actions">
+    <%= f.submit "Submit final dicision" %>
+  </div>
+<% end %>

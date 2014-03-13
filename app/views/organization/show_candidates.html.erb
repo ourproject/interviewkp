@@ -26,7 +26,7 @@
       <%= name.first.name %>
     </td>
     <td>      
-      <%= link_to 'View questions and clips', organization_show_clips_path(:interview_id => clip.interview_id) %>
+      <%= link_to 'View questions and clips', new_final_decision_path(:interview_id => clip.interview_id) %>
     </td>
       </tr>
     <% end %>
@@ -35,6 +35,9 @@
     
   </tbody>
 </table>
+
+
+
 <div>
   <%= button_to 'Logout', logout_path, :method =>"delete" %>
 </div>

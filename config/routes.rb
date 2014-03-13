@@ -1,5 +1,7 @@
 Erecruitment::Application.routes.draw do
 
+  resources :final_decisions
+
   get "interview_session/interview"
   resources :clips
 

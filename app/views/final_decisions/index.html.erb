@@ -1,0 +1,31 @@
+<h1>Listing final_decisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Interview</th>
+      <th>Decision</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @final_decisions.each do |final_decision| %>
+      <tr>
+        <td><%= final_decision.user_id %></td>
+        <td><%= final_decision.interview_id %></td>
+        <td><%= final_decision.decision %></td>
+        <td><%= link_to 'Show', final_decision %></td>
+        <td><%= link_to 'Edit', edit_final_decision_path(final_decision) %></td>
+        <td><%= link_to 'Destroy', final_decision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Final decision', new_final_decision_path %>

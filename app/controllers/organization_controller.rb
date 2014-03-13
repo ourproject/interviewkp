@@ -4,6 +4,7 @@ class OrganizationController < ApplicationController
 
   def show_clips
   	@clips=Clip.all
+
   end
 
   def show_candidates 
