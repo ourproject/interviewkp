@@ -12,7 +12,7 @@
   
   <tbody>
     <% @clips.select("DISTINCT(interview_id),user_id,question_id,url").each do |clip| %>
-  <% sql1="select created_by from interview_questions where id='"+clip.question_id+"'" %>
+  <% sql1="select created_by from interview_questions where id='"+clip.question_id.to_s+"'" %>
   <% tname=InterviewQuestion.find_by_sql(sql1) %>
   <% if tname.length !=0 %>
   <% sql2="select id from users where name='"+tname.first.created_by+"'" %>

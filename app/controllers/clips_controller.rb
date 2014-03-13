@@ -19,7 +19,7 @@ class ClipsController < ApplicationController
     @q_id=params[:question_id]
     @interview_id=params[:interview_id]
     @user_id=params[:user_id]
-    @current_question=InterviewQuestion.find(question_id)
+    @current_question=InterviewQuestion.find(@q_id)
   end
 
   # GET /clips/1/edit
@@ -29,8 +29,8 @@ class ClipsController < ApplicationController
   # POST /clips
   # POST /clips.json
   def create
-    addr=Rails.root.join('public/videos').to_s
-    addr=addr+@interview_id.to_s+'_'+@user_id.to_s+'_'+@q_id.to_s+'.webm'
+    addr='file://'+Rails.root.join('public/videos/').to_s
+    addr=addr+session[:user_id].to_s+'_'+session[:interview_id].to_s+'_'+session[:question_id].to_s+'.webm'
     @clip = Clip.new(:user_id => session[:user_id], :interview_id => session[:interview_id],  :question_id => session[:question_id], :url => addr)
 
     

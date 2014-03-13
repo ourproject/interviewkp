@@ -1,13 +1,5 @@
- 
- <%= form_for(@clip) do |f| %>
-
-    <div class="field">
-    <%= f.label :Question%><br>
-    <%= @current_question.question %>
-    </div>
- <div>
-
-
+<h2>Question: </h2>
+ <h3><%= @current_question.question %><h3>
  <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
@@ -26,7 +18,13 @@ scalable=no">
                 </div>         
 
             <script>
-                var count= <%= @user_id %>;
+                var count='<%=escape_javascript @user_id %>';
+                count=count.concat('_');
+                var iid='<%=escape_javascript @interview_id %>';
+                var qid='<%=escape_javascript @q_id %>';
+                count=count.concat(iid);
+                count=count.concat('_');
+                count=count.concat(qid);
 
                 var video = document.getElementById('video');
                 var downloadURL = document.getElementById('download-url');
@@ -38,7 +36,7 @@ scalable=no">
                 startRecording.onclick = function() {
                     startRecording.disabled = true;
                     stopRecording.disabled = false;
-                    count=count+1;
+                    
 
                     captureUserMedia(function(stream) {
                         window.audioVideoRecorder = window.RecordRTC(stream);
@@ -51,7 +49,7 @@ scalable=no">
                     startRecording.disabled = false;
 
                     window.audioVideoRecorder.stopRecording(function(url) {
-                        downloadURL.innerHTML = '<a href="' + url + '" download="'+count+'.webm" target="_blank" type=submit onclick="document.forms[0].submit();return false;">create clip and move to next question</a>';
+                        downloadURL.innerHTML = '<a href="' + url + '" download="'+count+'.webm" target="_blank" >create clip</a>';
 
                         video.src = url;                        
                     });
@@ -69,4 +67,5 @@ scalable=no">
     
 </div>
 
-<% end %>
+
+<%= render 'form' %>
