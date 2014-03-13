@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <%= favicon_link_tag 'dude4.ico' %>
+    <%= favicon_link_tag 'favicon2.ico' %>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -15,20 +15,18 @@
 	</div> 
 		<div id="columns"> 
 			<div id="side"> 
-				<h2>
-			<ul> <b>
-				<li><a href="http://www....">Home</a></li> </br>
-				<li><a href="http://www..../faq">Edit Profile</a></li></br>
-				<li><a href="http://www..../faq">Result</a></li></br>
-				<li><a href="http://www..../faq">About Us</a></li></br>  
-				<li><a href="http://www..../news">Logout</a></li> </br>
-				
-			</b>
-			</ul> </h2>
+			<ul> <h2><b>
+				<li><a href="http://www....">Home</a></li> 
+				<li><a href="http://www..../faq">About Us</a></li> 
+				<li><a href="http://www..../news">Logout</a></li> 
+				</b>
+			</h2>
+			</ul> 
 	    	</div> 
 	    	<div id="main"> 
 	    	<%= yield %> 
 	    	</div> 
+	    	
 	    	
 	    </div> 
 	
