@@ -39,4 +39,26 @@ table,th, td
 border: 3px solid black;
 }
 
+.button
+{
+  margin-left: 45% ;
+  width: 150px;
+  height: 30px;
+  background-repeat:no-repeat;
+  display:block;
+  background-color: #CAE1FF  ;
+  border:1px solid #dedede;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-size:12px;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  font-color: #565656;
+  cursor:pointer;
+  padding:5px 10px 6px 7px;
+}
+
+
 } 

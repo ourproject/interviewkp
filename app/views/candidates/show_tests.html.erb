@@ -1,4 +1,4 @@
-<h1>Availlable tests</h1>
+<h1> Availlable tests</h1>
 
 <table>
   <thead>
@@ -21,15 +21,12 @@
         <td><%= test.number_of_questions %></td>
         <td><%= test.duration.to_s+" mins" %></td>
         <td><%= test.cutoff %></td>
-        <td><%= link_to 'Start Test', testpaper_test_url(:test_id => test.id , :question_id => -1) %></td>
+        <td><%= link_to 'Start Test', testpaper_test_url(:test_id => test.id , :question_id => -1), :class => 'button', :id => 'button' %></td>
         
       </tr>
     <% end %>
   </tbody>
 </table>
-<div>
-  <%= button_to 'Logout', logout_path, :method =>"delete" %>
-</div>
 
 <br>
 

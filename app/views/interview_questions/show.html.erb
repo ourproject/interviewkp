@@ -10,5 +10,5 @@
   <%= @interview_question.created_by %>
 </p>
 
-<%= link_to 'Edit', edit_interview_question_path(@interview_question) %> |
-<%= link_to 'Back', interview_questions_path %>
+<%= button_to 'Edit', edit_interview_question_path(@interview_question) ,method: :get, :class => 'button', :id => 'button' %> |
+<%= button_to 'Back', interview_questions_path, method: :get, :class => 'button', :id => 'button'  %>

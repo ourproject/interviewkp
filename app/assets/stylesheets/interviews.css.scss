@@ -1,3 +1,53 @@
-// Place all the styles related to the interviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.interviews
+{ 
+background-color: #A9A9A9;
+font: "Comic Sans MS", serif, bold; 
+  color: #226;
+h1
+{  
+  
+   margin-left: 25em;;
+  padding-bottom: 0.5em;
+  font: 200% "Comic Sans MS", serif, bold; 
+  color: black;
+
+  
+}
+h2
+{  
+  
+  padding-bottom: 0.5em;
+  font: 150% "Arial Black", serif, bold; 
+  color: black;
+
+  
+}
+h3
+{
+  margin-left: 100px;
+  font: 150% "Times New Roman", serif, bold; 
+  color: black;
+}
+
+
+
+.mylink
+{
+  margin-left: 35%; ;
+  background-color: #417DC1;
+  font: 100% "Comic Sans MS", serif, bold; 
+  color: black;
+
+}
+
+table
+{
+margin-left: 40em;
+border-collapse:collapse;
+}
+table,th, td
+{
+border: 3px solid black;
+}
+
+} 

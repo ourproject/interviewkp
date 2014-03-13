@@ -20,9 +20,9 @@
         <td><%= clip.interview_id %></td>
         <td><%= clip.question_id %></td>
         <td><%= clip.url %></td>
-        <td><%= link_to 'Show', clip %></td>
-        <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
-        <td><%= link_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', clip ,method: :get, :class => 'button', :id => 'button' %></td>
+        <td><%= button_to 'Edit', edit_clip_path(clip), method: :get, :class => 'button', :id => 'button'  %></td>
+        <td><%= button_to 'Destroy', clip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Clip', new_clip_path %>
+<%= link_to 'New Clip', new_clip_path, :class => 'mylink', :id => 'mylink' %>

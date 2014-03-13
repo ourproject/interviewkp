@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @interview %> |
-<%= link_to 'Back', interviews_path %>
+<%= button_to 'Show', @interview , method: :get, :class => 'button', :id => 'button'%> |
+<%= button_to 'Back', interviews_path ,method: :get, :class => 'button', :id => 'button'%>

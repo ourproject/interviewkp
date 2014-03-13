@@ -1,4 +1,6 @@
-<h1>Listing final_decisions</h1>
+<html>
+<body>
+<h1>Final Decisions</h1>
 
 <table>
   <thead>
@@ -18,9 +20,9 @@
         <td><%= final_decision.user_id %></td>
         <td><%= final_decision.interview_id %></td>
         <td><%= final_decision.decision %></td>
-        <td><%= link_to 'Show', final_decision %></td>
-        <td><%= link_to 'Edit', edit_final_decision_path(final_decision) %></td>
-        <td><%= link_to 'Destroy', final_decision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Show', final_decision, method: :get %></td>
+        <td><%= button_to 'Edit', edit_final_decision_path(final_decision) , method: :get %></td>
+        <td><%= button_to 'Destroy', final_decision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Final decision', new_final_decision_path %>
+<%= link_to 'New decision', new_final_decision_path, :method => 'mylink', :id => 'mylink'  %>
+</body>
+</html>

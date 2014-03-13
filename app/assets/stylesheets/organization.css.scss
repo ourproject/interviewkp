@@ -2,6 +2,16 @@
 { 
 background-color: #A9A9A9;
 color: black;
+h1
+{  
+  
+   margin-left: 25em;;
+  padding-bottom: 0.5em;
+  font: 200% "Comic Sans MS", serif, bold; 
+  color: black;
+
+  
+}
 .button
 {
   
@@ -36,4 +46,13 @@ color: black;
   
 }
 
+table
+{
+margin-left: 48em;
+border-collapse:collapse;
+}
+table,th, td
+{
+border: 3px solid black;
+}
 } 

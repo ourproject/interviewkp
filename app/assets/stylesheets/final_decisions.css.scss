@@ -1,3 +1,79 @@
-// Place all the styles related to the final_decisions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.final_decisions
+{ 
+background-color: #A9A9A9;
+font: "Comic Sans MS", serif, bold; 
+  color: #226;
+h1
+{  
+  
+   margin-left: 25em;;
+  padding-bottom: 0.5em;
+  font: 200% "Comic Sans MS", serif, bold; 
+  color: black;
+
+  
+}
+h2
+{  
+  
+  padding-bottom: 0.5em;
+  font: 150% "Arial Black", serif, bold; 
+  color: black;
+
+  
+}
+h3
+{
+  margin-left: 100px;
+  font: 150% "Times New Roman", serif, bold; 
+  color: black;
+}
+
+
+
+.mylink
+{
+  margin-left: 35em ; 
+  background-color: #417DC1;
+  font: 100% "Comic Sans MS", serif, bold; 
+  color: black;
+
+}
+
+table
+{
+margin-left: 40em;
+border-collapse:collapse;
+}
+table,th, td
+{
+border: 3px solid black;
+}
+
+.button
+{
+  margin-left: 45% ;
+  width: 150px;
+  height: 30px;
+  background-repeat:no-repeat;
+  display:block;
+  background-color: #CAE1FF  ;
+  border:1px solid #dedede;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-size:12px;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  font-color: #565656;
+  cursor:pointer;
+  padding:5px 10px 6px 7px;
+}
+
+.field
+{
+  margin-left: 50% ;
+}
+
+} 

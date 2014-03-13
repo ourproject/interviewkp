@@ -15,5 +15,5 @@
   <%= @final_decision.decision %>
 </p>
 
-<%= link_to 'Edit', edit_final_decision_path(@final_decision) %> |
-<%= link_to 'Back', final_decisions_path %>
+<%= button_to 'Edit', edit_final_decision_path(@final_decision), method: :get, :class => 'button', :id => 'button' %> |
+<%= link_to 'Back', final_decisions_path ,method: :get, :class => 'button', :id => 'button'%>

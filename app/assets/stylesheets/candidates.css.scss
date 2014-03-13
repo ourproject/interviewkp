@@ -6,7 +6,7 @@ font: "Comic Sans MS", serif, bold;
 h1
 {  
   
-   margin-left: 30em;;
+   margin-left: 25em;;
   padding-bottom: 0.5em;
   font: 200% "Comic Sans MS", serif, bold; 
   color: black;
@@ -40,5 +40,41 @@ h3
 }
 
 
+table
+{
+margin-left: 37em;
+border-collapse:collapse;
+}
+table,th, td
+{
+border: 3px solid black;
+}
+
+div
+{
+  margin-left: 40% ;
+}
+.button
+{
+  
+  width: 150px;
+  height: 30px;
+  background-repeat:no-repeat;
+  display:block;
+  float:left;
+  margin-left: 0em;
+  background-color: #CAE1FF  ;
+  border:1px solid #dedede;
+  border-top:1px solid #eee;
+  border-left:1px solid #eee;
+  font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+  font-size:12px;
+  line-height:130%;
+  text-decoration:none;
+  font-weight:bold;
+  font-color: #565656;
+  cursor:pointer;
+  padding:5px 10px 6px 7px;
+}
 
 } 
