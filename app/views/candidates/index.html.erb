@@ -1,20 +1,33 @@
+<html>
+
+
 <title> Candidate </title>
+<body>
 <h1> Welcome!!! </h1>
 
 
-<h3> This Online Demo Test is intended, to give experience of the navigation, look and feel of the online test to the applicants. Click Below link to give Demo Test. </h3>
+<h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Online Demo Test is intended, to give experience of the navigation, look and feel of the online test to the applicants.</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click Below link to give Demo Test. </h3>
 <h3>
-<%= link_to 'Give Demo Test', testpaper_index_url(:test_owner => "admin"), 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= link_to 'Demo Test', testpaper_index_url(:test_owner => "admin"), 
    :class =>'mylink' %>
 </h3>
 
 </br></br>
-<h3> According to your Submitted Profile, Following test are alloted to you.</br>
-  To check avilable Tests,Click the link Below. </h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; According to your Submitted Profile, Following test are alloted to you.</br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To check avilable Tests,Click the link Below. </h3>
 </h3>
 
 <h3>
- <%= link_to 'Check Available Tests', candidates_show_tests_path , :class =>'mylink' %>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Available Tests', candidates_show_tests_path , :class =>'mylink' %>
 </h3>
+</br></br>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can click the link below to See your result !!</br>
 
-
+<h3>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Result', candidates_show_tests_path , :class =>'mylink' %>
+</h3>
+<a href="http://twitter.com/me" class="twitterbird" title="Twitter link"></a>
+</body>
+</html>

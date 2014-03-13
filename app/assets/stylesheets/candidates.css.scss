@@ -33,11 +33,24 @@ h3
 
 .mylink
 {
-  background-color: red;
+  background-color: #417DC1;
   font: 100% "Comic Sans MS", serif, bold; 
-  color: blue;
+  color: black;
 
 }
 
+.twitterbird 
+{
+ margin-bottom: 10px;
+ width: 160px;
+ height:160px;
+ display:block;
+ background:transparent url('abc.jpg') center top no-repeat;
+}
+
+.twitterbird:hover 
+{
+   background-image: url('abc.jpg');
+}
 
 } 

@@ -1,10 +1,22 @@
- <h1><b> WELCOME </b></h1>
+ <h1><center><b> Organization</b></center></h1>
  <title>Organization</title>
 </br>
-</h2><b><%= button_to "Set_test", new_test_path, :method =>"get" %></b></h2>
-<%= button_to "Edit question Bank", my_questions_path, :method =>"get" %>
+   <h3> You can set test for candidate, set number of questions, duration and cutoff.</br>
+     Click the button below to set test..</h3>
+		<%= button_to "Set_test", new_test_path, :method =>"get" ,:class=> 'button' ,   :id=> 'button'%>
+	</br><br></br>
 
-<%= button_to "View interviewed candidates", organization_show_candidates_path, :method =>"get"%>
-<div>
-	<%= button_to 'Logout', logout_path, :method =>"delete" %>
-</div>
+
+
+<h3> You can Edit the Questions. You can Add, Destroy, Edit Questions.
+</br>
+Click the button below to Edit Questions..</h3>
+<%= button_to "Edit question Bank", my_questions_path, :method =>"get", :class=> 'button' ,   :id=> 'button' %>
+</br><br></br>
+
+<h3> You can view the list of candidate appered for interview.
+</br>
+Click the button below to view the list..</h3>
+<%= button_to "Interviewed Candidate", organization_show_candidates_path, :method =>"get", :class=> 'button' ,   :id=> 'button'%>
+</br><br></br>
+

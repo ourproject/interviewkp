@@ -9,9 +9,8 @@ color: black;
   height: 30px;
   background-repeat:no-repeat;
   display:block;
-  float:left;
-  margin-left: 0em;
-  background-color:#a6f5f9;
+  margin-left: 25em;
+  background-color: #CAE1FF  ;
   border:1px solid #dedede;
   border-top:1px solid #eee;
   border-left:1px solid #eee;
@@ -20,8 +19,21 @@ color: black;
   line-height:130%;
   text-decoration:none;
   font-weight:bold;
-  color:#565656;
+  font-color: #565656;
   cursor:pointer;
   padding:5px 10px 6px 7px;
 }
+
+   
+  h3
+  {  
+   margin-left: 20em ;
+
+  padding-bottom: 0.5em;
+  font: 120% "Arial Black", serif, bold; 
+  color: black;
+
+  
+}
+
 } 

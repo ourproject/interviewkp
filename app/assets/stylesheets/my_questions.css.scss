@@ -22,7 +22,7 @@ min-height: 100px;
 
 h2
 {  
-  
+  margin-left: 15% ;
   padding-bottom: 0.5em;
   font: 150% "Arial Black", serif, bold; 
   color: black;
@@ -31,13 +31,14 @@ h2
 }
 
 p, div.option { 
+color:black;
 margin-left: 200px; 
 margin-top: 0.5em; 
 margin-bottom: 0.8em; 
 } 
 
 .answer{ 
-color: #44a; 
+color:black;
 font-weight: bold; 
 margin-right: 3em; 
 }
