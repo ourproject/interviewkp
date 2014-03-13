@@ -2,12 +2,13 @@ Erecruitment::Application.routes.draw do
 
   resources :final_decisions
 
-  get "interview_session/interview"
+  
   resources :clips
 
   resources :interviews
-
+  
   resources :interview_questions
+  
 
   resources :answers
 
@@ -25,8 +26,23 @@ Erecruitment::Application.routes.draw do
 
   resources :tests
 
+
   get 'admin' => 'admin#index'
- 
+  get 'results_homepage' => 'final_decisions#index'
+  get "interview_session/interview"
+  get 'interview_list_page' => 'interviews#index'
+  get 'interview_question_homepage' => 'interview_questions#index '
+  get 'all_answers' => 'answers#index'
+  get 'candidates_homepage' => 'candidates#index '
+  get 'candidate_homepage' => 'candidate#index '
+  get 'organisaion_homepage' => 'organization#index'
+  get 'tests_homepage' => 'tests#index'
+  get 'user_homepage' => 'users#index'
+  get 'testpapers_list' => 'testpaper#index '
+  get 'question_bank' => 'my_questions#index'
+  #get '' => ''
+
+
 controller :sessions do
  get 'login' => :new
  post 'login' => :create
@@ -34,8 +50,11 @@ controller :sessions do
 end
   
   resources :users
-
-
+  
+  get 'candidates_homepage' => 'candidates#index '
+  get 'candidate_homepage' => 'candidate#index '
+  get 'organisaion_homepage' => 'organization#index'
+  
   get "testpaper/index"
 
   resources :my_questions
