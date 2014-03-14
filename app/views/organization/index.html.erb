@@ -1,22 +1,24 @@
- <h1><center><b> Organization</b></center></h1>
+ <vai><center><b> Organization</b></center></vai>
  <title>Organization</title>
 </br>
-   <h3> You can set test for candidate, set number of questions, duration and cutoff.</br>
-     Click the button below to set test..</h3>
+   <h3><%= image_tag "tests.jpg", :class => 'image', :id => 'image' %>&nbsp;&nbsp; You can set test for candidate, set number of questions, duration and cutoff.</br>
+     &nbsp;&nbsp;&nbsp;Click the button below to set test..</h3>
 		<%= button_to "Set_test", new_test_path, :method =>"get" ,:class=> 'button' ,   :id=> 'button'%>
 	</br><br></br>
 
 
 
-<h3> You can Edit the Questions. You can Add, Destroy, Edit Questions.
-</br>
+<h3><%= image_tag "question.jpg", :class => 'image', :id => 'image' %> &nbsp;&nbsp;You can Edit the Questions. You can Add, Destroy, Edit Questions.
+</br>&nbsp;&nbsp;
 Click the button below to Edit Questions..</h3>
 <%= button_to "Edit question Bank", my_questions_path, :method =>"get", :class=> 'button' ,   :id=> 'button' %>
 </br><br></br>
 
-<h3> You can view the list of candidate appered for interview.
+<h3><%= image_tag "interviewlist.jpg", :class => 'image', :id => 'image' %>&nbsp;&nbsp; You can view the list of candidate appered for interview.
 </br>
-Click the button below to view the list..</h3>
-<%= link_to "Interviewed Candidate", organization_show_candidates_path, :method =>"get", :class=> 'button' ,   :id=> 'button'%>
+
+&nbsp;&nbsp;&nbsp;Click the button below to view the list..</h3>
+<%= button_to "Interviewed Candidate", organization_show_candidates_path, :method =>"get", :class=> 'button' ,   :id=> 'button'%>
+
 </br><br></br>
 

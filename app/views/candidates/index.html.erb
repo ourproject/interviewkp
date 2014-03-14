@@ -5,9 +5,8 @@
 <body>
 <h1> Welcome!!! </h1>
 
-
-<h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Online Demo Test is intended, to give experience of the navigation, look and feel of the online test to the applicants.</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Click Below link to give Demo Test. </h3>
+<h3> <%= image_tag "demos.jpg", :class => 'image', :id => 'image' %>This Demo Test is intended, to give experience of the navigation, look and feel of the test to the applicants.</br>
+ Click Below link to give Demo Test. </h3>
 <h3>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <%= link_to 'Demo Test', demo_test_demo_url(:question_count=>5,:question_id=>0), 
@@ -15,15 +14,15 @@
 </h3>
 
 </br></br>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; According to your Submitted Profile, Following test are alloted to you.</br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To check avilable Tests,Click the link Below. </h3>
+<h3> <%= image_tag "tests.jpg", :class => 'image', :id => 'image' %>According to your Submitted Profile, Following test are alloted to you.</br>
+ To check avilable Tests,Click the link Below. </h3>
 </h3>
 
 <h3>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Available Tests', candidates_show_tests_path , :class =>'mylink' %>
 </h3>
 </br></br>
-<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; You can click the link below to See your result !!</br>
+<h3> <%= image_tag "result.jpg", :class => 'image', :id => 'image' %> You can click the link below to See your result !!</br>
 
 <h3>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to 'Result', candidates_show_results_path , :class =>'mylink' %>

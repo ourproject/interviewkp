@@ -50,10 +50,7 @@ table,th, td
 border: 3px solid black;
 }
 
-div
-{
-  margin-left: 40% ;
-}
+
 .button
 {
   
@@ -76,5 +73,9 @@ div
   cursor:pointer;
   padding:5px 10px 6px 7px;
 }
-
+.image
+{
+  float: left;
+  margin-left: 2%;
+}
 } 
