@@ -19,7 +19,7 @@ h1
   height: 30px;
   background-repeat:no-repeat;
   display:block;
-  margin-left: 25em;
+  margin-left: 40em;
   background-color: #CAE1FF  ;
   border:1px solid #dedede;
   border-top:1px solid #eee;
@@ -37,7 +37,7 @@ h1
    
   h3
   {  
-   margin-left: 20em ;
+   margin-left: 10em ;
 
   padding-bottom: 0.5em;
   font: 120% "Arial Black", serif, bold; 
@@ -55,4 +55,10 @@ table,th, td
 {
 border: 3px solid black;
 }
+.image
+{
+  float: left;
+  margin-left: 2%;
+}
+
 } 
