@@ -16,6 +16,7 @@ class FinalDecisionsController < ApplicationController
   def new
     @final_decision = FinalDecision.new
     @clips= Clip.all
+    session[:candidate]=params[:candidate_id]
   end
 
   # GET /final_decisions/1/edit
@@ -25,7 +26,7 @@ class FinalDecisionsController < ApplicationController
   # POST /final_decisions
   # POST /final_decisions.json
   def create
-    @final_decision = FinalDecision.new(:user_id => session[:user_id], :interview_id => session[:interview_id], :decision => params[:decision])
+    @final_decision = FinalDecision.new(:user_id => session[:candidate], :interview_id => session[:interview_id], :decision => params[:decision])
 
 
       if @final_decision.save

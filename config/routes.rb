@@ -1,5 +1,7 @@
 Erecruitment::Application.routes.draw do
 
+  get "demo_question/question"
+  get "demo_test/demo"
   resources :final_decisions
 
   
@@ -23,7 +25,7 @@ Erecruitment::Application.routes.draw do
   get "admin/aboutus"
   get "testpaper/thankyou"
   get "interview_session/thankyou"
-
+  get "demo_test/thankyou"
   resources :tests
 
 

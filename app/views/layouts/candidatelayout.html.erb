@@ -19,7 +19,7 @@
 				<li><% sql= "select role from users where id='"+session[:user_id].to_s+"'" %>
 				<% role= User.find_by_sql(sql).first.role.to_s %>
 				<% if role=="Candidate" %>
-				<a href= "http://localhost:3000/Candidates/index" >Home</a>
+				<a href= "http://localhost:3000/candidates/index" >Home</a>
 			<% else %> 
                  <a href= "http://localhost:3000/organization/index" >Home</a>
                  <% end %>

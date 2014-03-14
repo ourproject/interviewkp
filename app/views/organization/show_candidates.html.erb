@@ -11,13 +11,13 @@
   </thead>
   
   <tbody>
-    <% @clips.select("DISTINCT(interview_id),user_id,question_id,url").each do |clip| %>
-  <% sql1="select created_by from interview_questions where id='"+clip.question_id.to_s+"'" %>
-  <% tname=InterviewQuestion.find_by_sql(sql1) %>
+    <% @clips.select("DISTINCT(interview_id),user_id,url").each do |clip| %>
+  <% sql1="select set_by from interviews where id='"+clip.interview_id.to_s+"'" %>
+  <% tname=Interview.find_by_sql(sql1) %>
   <% if tname.length !=0 %>
-  <% sql2="select id from users where name='"+tname.first.created_by+"'" %>
+  <% sql2="select id from users where name='"+tname.first.set_by+"'" %>
   <% tid=User.find_by_sql(sql2) %>
-    <% if tid.first==session[:user_id] %>
+    <% if tid.first.id==session[:user_id] %>
       <tr>
         <td><%= clip.interview_id.to_s %></td>
         <td>
@@ -26,7 +26,7 @@
       <%= name.first.name %>
     </td>
     <td>      
-      <%= link_to 'View questions and clips', new_final_decision_path(:interview_id => clip.interview_id) %>
+      <%= link_to 'View questions and clips', new_final_decision_path(:interview_id => clip.interview_id, :candidate_id=> clip.user_id) %>
     </td>
       </tr>
     <% end %>

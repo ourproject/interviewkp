@@ -1,0 +1,30 @@
+
+  <div class="field">
+    Question: <br>
+    <%= @current_question.question %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_a) %>
+    <%= label_tag(:option_a_label, @current_question.option_a) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_b) %>
+    <%= label_tag(:option_b_label, @current_question.option_b) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_c) %>
+    <%= label_tag(:option_c_label, @current_question.option_c) %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:selected_option, @current_question.option_d) %>
+    <%= label_tag(:option_d_label, @current_question.option_d) %>
+  </div>
+  <div class="actions">
+    <%= link_to 'Next', demo_test_demo_url(:question_count=>@count.to_i,:question_id=>@current_question.id.to_i) 
+    %>
+    <%#= button_to "Save & Next", demo_test_demo_url(:question_count=>@count.to_i, :question_id=>@current_question.id.to_i), :method=>"get", :class=> 'button', :id=>'button' %>
+  </div>

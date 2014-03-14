@@ -24,28 +24,31 @@
 
   <tbody>
     <% session[:interview_id]=params[:interview_id] %>
-    <% @clips.select("DISTINCT(question_id),user_id,interview_id,url").each do |clip| %>
-    <% if clip.interview_id == params[:interview_id] %>
-    <% sql="select question from interview_questions where id='"+clip.question_id.to_s+"'" %>
-    <% sql1="select id from interviews where id='"+clip.interview_id+"'"%>
-      <% question=InterviewQuestion.find_by_sql(sql) %>
-      <% if question.length !=0  %>
+   
+    <% sql="select q.question, q.id from interview_questions q join clips c where q.id=c.question_id AND c.interview_id='"+params[:interview_id]+"'" %>
+         <% @question=InterviewQuestion.find_by_sql(sql) %>
+          <% @question.each do |question| %>
+      <% if question.question.length !=0  %>
       <tr>
         <td>
-      
-      <%= question.first.question %>
-      
-
+      <%= question.question %>
     </td>
     <td> 
-    <a href=clip.url>View interview clip </a>
-      <%= link_to 'View interview clip', clip.url %>
+      <% sql="select url from clips where question_id="+question.id.to_s+" AND interview_id="+params[:interview_id]+" AND user_id="+params[:candidate_id] %>
+      <% url=Clip.find_by_sql(sql).first.url.to_s %>
+      
+      <html>
+<body>
 
+    <a href=<%= url %> >View interview clip </a>
+      <%#= link_to 'View interview clip', clip.url %>
+    </body>
+    </html>
     </td>
       </tr>
     <% end %>
     <% end %>
-    <% end %>
+    
   </tbody>
   
 </table>
